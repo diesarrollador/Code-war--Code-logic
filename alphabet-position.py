@@ -10,8 +10,8 @@ from loguru import logger
 @logger.catch
 def alphabet_position(text):
     position, position2 = [], []
-    for i in "".join(list(text.replace(" ", "").lower())):
-        position.append("".join(list(ascii_lowercase)).find(i))
+    for i in (text.replace(" ", "").lower()):
+        position.append((ascii_lowercase).find(i))
     position2 = [item + 1 for item in position if item != -1]
     return " ".join([str(value) for value in position2])
 
