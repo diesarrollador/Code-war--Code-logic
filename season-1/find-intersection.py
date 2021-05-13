@@ -16,7 +16,7 @@ def FindIntersection(strArr):
     for i in strArr[0].replace(' ', '').split(','):
         if i in strArr[1].replace(' ', '').split(','):
             resul.append(i)
-    return ','.join(resul) if len(resul) > 0 else False
+    return ','.join(resul) if len(resul) > 0 else 'false'
 
 
 print(FindIntersection(["3, 17, 18", "1, 4, 9, 10"]))
