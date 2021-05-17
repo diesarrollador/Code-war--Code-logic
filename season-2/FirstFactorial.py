@@ -7,7 +7,7 @@ Para los casos de prueba,
 el rango estará entre 1 y 18 y
 la entrada siempre será un número entero. """
 from math import factorial
-FirstFactorial = lambda num: factorial(num)
+FirstFactorial = lambda num: 1 if num<=1 else factorial(num)
 
 
-print(FirstFactorial(13))
+print(FirstFactorial(8))
