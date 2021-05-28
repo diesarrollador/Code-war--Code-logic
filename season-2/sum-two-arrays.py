@@ -15,9 +15,10 @@ def sum_arrays(array1,array2):
             out2.insert(0,f)
         return out2 if out<0 else list(map(int,str(out)))
 
-print(sum_arrays([],[]))
-print(sum_arrays([0],[]))
-print(sum_arrays([],[1,2]))
-print(sum_arrays([3,2,9],[1,2]))
-print(sum_arrays([-3,4,2],[3,4,4]))
-print(sum_arrays([3,2,6,6],[-7,2,2,8]))
+"""TEST"""
+print(sum_arrays([],[]))# output []
+print(sum_arrays([0],[]))#output [0]
+print(sum_arrays([],[1,2]))#output [1, 2]
+print(sum_arrays([3,2,9],[1,2]))#output [3, 4, 1]
+print(sum_arrays([-3,4,2],[3,4,4]))#output [2]
+print(sum_arrays([3,2,6,6],[-7,2,2,8]))#output [-3, 9, 6, 2]
