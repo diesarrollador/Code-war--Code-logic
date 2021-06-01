@@ -7,24 +7,19 @@ def valid_solution(board):
     if len(board) != 9 : return False
     for fila in board:
         if len(set(fila)) != 9 or sum(set(fila)) != 45 or 0 in fila : return False
-    t1 = board[0][:3] + board[1][:3] + board[2][:3]
-    t2 = board[0][3:6] + board[1][3:6] + board[2][3:6]
-    t3 = board[0][6:] + board[1][6:] + board[2][6:]
-    t4 = board[3][:3] + board[4][:3] + board[5][:3]
-    t5 = board[3][3:6] + board[4][3:6] + board[5][3:6]
-    t6 = board[3][6:] + board[4][6:] + board[5][6:]
-    t7 = board[6][:3] + board[7][:3] + board[8][:3]
-    t8 = board[6][3:6] + board[7][3:6] + board[8][3:6]
-    t9 = board[6][6:] + board[7][6:] + board[8][6:]
-    cont=0
-    if (len(set(t1)) == 9) or (sum(set(t1)) == 45) or (len(set(t2)) == 9) or (sum(set(t2)) == 45) or (len(set(t3)) == 9) or (sum(set(t3)) == 45) or (len(set(t4)) == 9) or (sum(set(t4)) == 45) or (len(set(t5)) == 9) or (sum(set(t5)) == 45) or (len(set(t6)) == 9) or (sum(set(t6)) == 45) or (len(set(t7)) == 9) or (sum(set(t7)) == 45) or (len(set(t8)) == 9) or (sum(set(t8)) == 45) or (len(set(t9)) == 9) or (sum(set(t9)) == 45):
-        columna = list(zip(board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]))
-        for i in columna:
-            if len(set(i)) != 9 or sum(set(i)) != 45:
-                cont += 1
-        if cont > 0 : return False
-        return True
-    return False
+    cont, lista = 0, list()
+    columna = list(zip(board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]))
+    for i in columna:
+        if len(set(i)) != 9 or sum(set(i)) != 45:
+            cont += 1
+    if cont > 0 : return False
+    
+    # Obtiene las submatrices 3 x 3 
+    for i in range(3):
+        for j in range(3):
+            lista.extend(sum([fila[i*3 : (i+1)*3] for fila in board[j*3 : (j+1)*3]], []))
+            if len(set(lista)) != 9 or sum(set(lista)) != 45 : return False 
+            return True
 
 # TEST CASES
 print(valid_solution([
