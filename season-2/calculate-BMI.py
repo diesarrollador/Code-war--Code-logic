@@ -1,7 +1,9 @@
 """ Escriba la función bmi que calcula 
 el índice de masa corporal 
 (bmi = peso / altura2). """
-bmi = lambda w, h : 'Underweight' if round(w / (h**2), 1) <= 18.5 else 'Normal' if round(w / (h**2), 1) <= 25.0 else 'Overweight' if round(w / (h**2), 1) <= 30.0 else 'Obese'
+def bmi(weight, height):
+    indc = round(weight / (height**2), 1)
+    return 'Underweight' if indc <= 18.5 else 'Normal' if indc <= 25.0 else 'Overweight' if indc <= 30.0 else 'Obese'
 
 # TEST CASES
 print(bmi(50, 1.80))#Output Underweight
