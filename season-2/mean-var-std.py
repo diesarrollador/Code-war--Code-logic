@@ -1,10 +1,15 @@
 import numpy
 """
 https://www.hackerrank.com/challenges/np-mean-var-and-std/problem?h_r=next-challenge&h_v=zen
+
+Mean: calcula la media aritmética a lo largo del eje especificado.
+Var: calcula la varianza aritmética a lo largo del eje especificado.
+Std: calcula la desviación estándar aritmética a lo largo del eje especificado.
+
 Tarea:
 Se le da una matriz 2-D de tamaño NxM.
 Tu tarea es encontrar:
-La media a lo largo del axis 1
+La mean a lo largo del axis 1
 La var a lo largo del axis 0
 El std a lo largo del axis None
 
