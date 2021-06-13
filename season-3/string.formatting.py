@@ -12,8 +12,9 @@ binario de number y los valores deben estar separados
 por un solo espacio.
 """
 def print_formatted(number):
+    S = len(bin(number)[2:])
     for i in range(1, number + 1):
-        print(str(i).rjust(len(bin(number)[2:]), " "), oct(i)[2:].rjust(len(bin(number)[2:]), " "), hex(i).upper()[2:].rjust(len(bin(number)[2:]), " "), bin(i)[2:].rjust(len(bin(number)[2:]), " "))
+        print(str(i).rjust(S, " "), oct(i)[2:].rjust(S, " "), hex(i).upper()[2:].rjust(S, " "), bin(i)[2:].rjust(S, " "))
         
 if __name__ == '__main__':
     n = int(input())
