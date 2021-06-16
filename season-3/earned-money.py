@@ -16,16 +16,15 @@ de todas las tallas de zapatos en la tienda.
 espacios de la talla de zapato deseada por el 
 cliente y x, el precio del zapato.
 """
-from collections import Counter as Cnt
+from collections import Counter
 def shoe_shop(tallas: list, lista_clientes: list) -> int:
     out = list()
-    TALLAS_DICT = Cnt(tallas)
+    tallas_dic = Counter(tallas)
     for clie in lista_clientes:
-        if clie[0] in TALLAS_DICT.keys():
-            key = TALLAS_DICT.get(clie[0])
-            if key > 0:
+        if clie[0] in tallas_dic.keys():
+            if tallas_dic.get(clie[0]) > 0:
                 out.append(clie[-1])
-                TALLAS_DICT[clie[0]] -= 1
+                tallas_dic[clie[0]] -= 1
     return sum(out)
             
 if __name__ == "__main__":
